@@ -239,6 +239,8 @@ func (l *LinuxFactory) StartInitialization() (err error) {
 	if err != nil {
 		return err
 	}
+	extraData := make([]byte, 2048)
+	syscall.Read(pipefd, extraData)
 	return i.Init()
 }
 
