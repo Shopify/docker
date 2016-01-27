@@ -37,8 +37,9 @@ set -e
 	./man/md2man-all.sh -q || true
 	# TODO decide if it's worth getting go-md2man in _each_ builder environment to avoid this
 
-	# TODO add a configurable knob for _which_ debs to build so we don't have to modify the file or build all of them every time we need to test
-	for dir in contrib/builder/deb/*/; do
+    # If we specify a release (eg. ubuntu-trusty) only build for that, otherwise all
+    if [ -z "$RELEASE" ]; then RELEASE=*; fi
+	for dir in contrib/builder/deb/$RELEASE/; do
 		version="$(basename "$dir")"
 		suite="${version##*-}"
 

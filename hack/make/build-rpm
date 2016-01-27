@@ -60,7 +60,8 @@ set -e
 		fi
 	done < CHANGELOG.md
 
-	# TODO add a configurable knob for _which_ rpms to build so we don't have to modify the file or build all of them every time we need to test
+    # If we specify a release (eg. centos-7) only build for that, otherwise all
+    if [ -z "$RELEASE" ]; then RELEASE=*; fi
 	for dir in contrib/builder/rpm/*/; do
 		version="$(basename "$dir")"
 		suite="${version##*-}"
