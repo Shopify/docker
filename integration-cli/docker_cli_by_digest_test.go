@@ -665,7 +665,7 @@ func (s *DockerSchema1RegistrySuite) TestPullFailsWithAlteredLayer(c *check.C) {
 	c.Assert(err, checker.IsNil)
 
 	// Next, get the digest of one of the layers from the manifest.
-	targetLayerDigest := imgManifest.FSLayers[0].BlobSum
+	targetLayerDigest := imgManifest.FSLayers[1].BlobSum
 
 	// Move the existing data file aside, so that we can replace it with a
 	// malicious blob of data. NOTE: we defer the returned undo func.

@@ -1,7 +1,7 @@
 package layer
 
 import (
-	"compress/gzip"
+	gzip "github.com/klauspost/pgzip"
 	"encoding/json"
 	"errors"
 	"fmt"
