@@ -166,4 +166,9 @@ clone git github.com/spf13/pflag cb88ea77998c3f024757528e3305022ab50b43be
 clone git github.com/inconshreveable/mousetrap 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 clone git github.com/flynn-archive/go-shlex 3f9db97f856818214da2e1057f8ad84803971cff
 
+clone git github.com/klauspost/pgzip 95e8170c5d4da28db9c64dfc9ec3138ea4466fd4
+clone git github.com/klauspost/compress 14eb9c4951195779ecfbec34431a976de7335b0a
+clone git github.com/klauspost/crc32 19b0b332c9e4516a6370a0456e6182c3b5036720
+clone git github.com/klauspost/cpuid 09cded8978dc9e80714c4d85b0322337b0a1e5e0
+
 clean

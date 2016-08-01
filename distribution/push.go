@@ -2,7 +2,7 @@ package distribution
 
 import (
 	"bufio"
-	"compress/gzip"
+	gzip "github.com/klauspost/pgzip"
 	"fmt"
 	"io"
 

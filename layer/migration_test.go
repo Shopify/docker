@@ -2,7 +2,7 @@ package layer
 
 import (
 	"bytes"
-	"compress/gzip"
+	gzip "github.com/klauspost/pgzip"
 	"fmt"
 	"io"
 	"io/ioutil"
