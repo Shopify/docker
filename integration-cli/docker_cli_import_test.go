@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"compress/gzip"
+	gzip "github.com/klauspost/pgzip"
 	"io/ioutil"
 	"os"
 	"os/exec"
