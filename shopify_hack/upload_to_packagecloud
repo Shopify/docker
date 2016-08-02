@@ -1,0 +1,11 @@
+#!/bin/bash
+set -ex
+
+# Seems like package_cloud gem fails without LC_ALL being UTF :dunnolol
+export LC_ALL=en_US.UTF-8
+
+# Hacky but better than gemfiles for single gem
+sudo gem install package_cloud
+
+PACKAGE=$(ls bundles/latest/build-deb/ubuntu-trusty|grep deb)
+/usr/lib/*ruby*/*shopify*/bin/package_cloud push --url https://packages.shopify.io shopify/public/ubuntu/trusty bundles/latest/build-deb/ubuntu-trusty/$PACKAGE
