@@ -5,18 +5,18 @@ steps:
   - command: make test-unit
     agents:
       - linecook=1
-      - host=linecook1.svc.use1.isrv.io
+      - hostname=linecook1.svc.use1.isrv.io
     parallelism: 1
 
   - command: make test-docker-py
     agents:
       - linecook=1
-      - host=linecook1.svc.use1.isrv.io
+      - hostname=linecook1.svc.use1.isrv.io
 
   - command: make test-integration-cli
     agents:
       - linecook=1
-      - host=linecook1.svc.use1.isrv.io
+      - hostname=linecook1.svc.use1.isrv.io
     env:
       BUILDKITE_RETRY_COUNT: 10
 
@@ -28,7 +28,7 @@ steps:
       shopify_hack/upload_to_packagecloud
     agents:
       - linecook=1
-      - host=linecook1.svc.use1.isrv.io
+      - hostname=linecook1.svc.use1.isrv.io
     env:
       DOCKER_BUILD_PKGS: ubuntu-trusty
     branches: current_shopify
