@@ -1,0 +1,30 @@
+env:
+  TMPDIR: "/tmp"
+
+steps:
+  - command: make test-unit
+    agents:
+      - linecook=1
+    parallelism: 1
+
+  - command: make test-docker-py
+    agents:
+      - linecook=1
+
+  - command: make test-integration-cli
+    agents:
+      - linecook=1
+    env:
+      BUILDKITE_RETRY_COUNT: 10
+
+  - wait
+
+  - command: |-
+      touch foo
+      make deb
+      shopify_hack/upload_to_packagecloud
+    agents:
+      - linecook=1
+    env:
+      DOCKER_BUILD_PKGS: ubuntu-trusty
+    branches: current_shopify
